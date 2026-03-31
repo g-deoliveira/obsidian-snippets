@@ -1,0 +1,89 @@
+.theme-light {
+    --inline-code-bg: #f8f8f8;
+    --inline-code-border: #d4d4d4;
+    --inline-code-text: #e0527d;
+}
+
+.theme-dark {
+    --inline-code-bg: #2b3548;
+    --inline-code-border: #42506b;
+    --inline-code-text: #ffb3c1;
+}
+
+/* inline code */
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code,
+.cm-inline-code {
+    background-color: var(--inline-code-bg) !important;
+    color: var(--inline-code-text) !important;
+    border: 1px solid var(--inline-code-border) !important;
+    border-radius: 3px;
+    padding: 0.02em 0.28em;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1;
+    box-shadow: none !important;
+}
+
+/* reading view code blocks */
+.markdown-rendered pre,
+.markdown-preview-view pre {
+    background: var(--inline-code-bg) !important;
+    border: 1px solid var(--inline-code-border) !important;
+    border-radius: 4px;
+    box-shadow: none !important;
+    padding: 1em 1.1em;
+}
+
+/* make sure the code element inside does not add its own styling */
+.markdown-rendered pre code,
+.markdown-preview-view pre code {
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* editor/live preview fenced block */
+.markdown-source-view.mod-cm6 .cm-preview-code-block,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-end {
+    background: var(--inline-code-bg) !important;
+}
+
+/* explicit outer border for editor block */
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin {
+    border-top: 1px solid var(--inline-code-border) !important;
+    border-left: 1px solid var(--inline-code-border) !important;
+    border-right: 1px solid var(--inline-code-border) !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock {
+    border-left: 1px solid var(--inline-code-border) !important;
+    border-right: 1px solid var(--inline-code-border) !important;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-end {
+    border-left: 1px solid var(--inline-code-border) !important;
+    border-right: 1px solid var(--inline-code-border) !important;
+    border-bottom: 1px solid var(--inline-code-border) !important;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* print */
+@media print {
+    .markdown-rendered pre,
+    .markdown-preview-view pre {
+        background-color: #efefef !important;
+        border: 1px solid #d4d4d4 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
