@@ -1,0 +1,7 @@
+body {
+  --checkbox-color: #22c55e;
+  --checkbox-color-hover: #16a34a;
+  --checkbox-marker-color: #ffffff;
+  --checklist-done-decoration: none;
+  --checklist-done-color: inherit;
+}
